@@ -3,6 +3,7 @@ using Discord.WebSocket;
 using Discord.Net;
 using System;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Discord_Simple_Embed_Bot
 {
@@ -13,17 +14,36 @@ namespace Discord_Simple_Embed_Bot
 
         public async Task MainAsync()
         {
+            string tokenPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "token.txt");
+            if (!File.Exists(tokenPath))
+                File.Create(tokenPath).Close();
+
+            string token = File.ReadAllText(tokenPath);
+            if (string.IsNullOrWhiteSpace(token))
+            {
+                await Logging.Log(new LogMessage(LogSeverity.Critical, "Main", "Please put the Bot-Token into: " + tokenPath));
+                return;
+            }
+
             DiscordSocketClient _client = new DiscordSocketClient();
             _client.Log += Logging.Log;
             _client.MessageReceived += Client_MessageReceived;
-            await _client.LoginAsync(TokenType.Bot, "ODA4ODMwNzQxNTQ2MDA4NTc3.YCMQVA.kRe6ZL45NYS8DiuoQv0yx0NEHnE", false);
-            await _client.StartAsync();
+            try
+            {
+                await _client.LoginAsync(TokenType.Bot, token, false);
+                await _client.StartAsync();
+            }
+            catch (Exception ex)
+            {
+                await Logging.Log(new LogMessage(LogSeverity.Critical, "Main", "", ex));
+                return;
+            }
             CommandHandler.Client = _client;
 
             //Block this task until the program is closed.
             await Task.Delay(-1);
 
-            
+
         }
 
         private async Task Client_MessageReceived(SocketMessage messageParam)
