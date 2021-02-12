@@ -21,7 +21,7 @@ Coming soon
     <title>
     <hex color>
     <description>
-    <field>
+    <fields>
     ```
   * Example:
     ```
