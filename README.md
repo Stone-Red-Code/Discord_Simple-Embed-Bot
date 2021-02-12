@@ -1,11 +1,11 @@
 # Discord_Simple-Embed-Bot
 
->A bot thats makes it very simple to post custom embeds
+> A bot thats makes it very simple to post custom embeds
 
-##Setup
+## Setup
 Coming soon
 
-##Commands
+## Commands
 * help
   * Lists all commands
   * Parameters: `<command>`
