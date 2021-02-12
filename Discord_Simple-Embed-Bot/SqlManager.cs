@@ -12,7 +12,7 @@ namespace Discord_Simple_Embed_Bot
     readonly string databasePath;
     public SqlManager()
     {
-        databasePath = AppDomain.CurrentDomain.BaseDirectory + "\\MainDatabase.sqlite";
+        databasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "MainDatabase.sqlite");
         sqlConnectionString = "Data Source = " + databasePath + "; Version = 3";
 
         //Create SQLite database file
