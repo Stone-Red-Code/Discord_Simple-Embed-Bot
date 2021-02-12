@@ -10,11 +10,11 @@ Coming soon
   * Lists all commands
   * Parameters: `<command>`
 
-* prefix
+* ### prefix
   * Changes prefix
   * Parameters: `<prefix>`
     
-* new
+* ### new
   * Creats new embed
   * Parameters:
     ```
