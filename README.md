@@ -2,19 +2,26 @@
 
 > A bot that makes it very simple to post custom embeds
 
+## Usage
+### Permissions:
+Currently, only guild members with administrator rights can use this bot.
+
+### Invite:
+Coming soon
+
 ## Setup
 Coming soon
 
 ## Commands
-* ### help
+### help
   * Lists all commands
   * Parameters: `<command>`
 
-* ### prefix
+### prefix
   * Changes prefix
   * Parameters: `<prefix>`
     
-* ### new
+### new
   * Creats new embed
   * Parameters:
     ```
