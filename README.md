@@ -17,7 +17,8 @@ Coming soon
 * new
   * Creats new embed
   * Parameters:
-    ```<title>
+    ```
+    <title>
     <hex color>
     <description>
     <field>```
