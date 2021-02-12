@@ -9,8 +9,7 @@ namespace Discord_Simple_Embed_Bot
 {
     public class Program
     {
-        public static void Main()
-            => new Program().MainAsync().GetAwaiter().GetResult();
+        public static void Main() => new Program().MainAsync().GetAwaiter().GetResult();
 
         public async Task MainAsync()
         {
@@ -21,13 +20,14 @@ namespace Discord_Simple_Embed_Bot
             string token = File.ReadAllText(tokenPath);
             if (string.IsNullOrWhiteSpace(token))
             {
-                await Logging.Log(new LogMessage(LogSeverity.Critical, "Main", "Please put the Bot-Token into: " + tokenPath));
+                await Logging.Log(new LogMessage(LogSeverity.Critical, "Main", "", new ArgumentNullException("Token", $"Bot-Token not found! Put the Bot-Token into: '{tokenPath}'")));
                 return;
             }
 
             DiscordSocketClient _client = new DiscordSocketClient();
             _client.Log += Logging.Log;
             _client.MessageReceived += Client_MessageReceived;
+
             try
             {
                 await _client.LoginAsync(TokenType.Bot, token, false);
@@ -42,8 +42,6 @@ namespace Discord_Simple_Embed_Bot
 
             //Block this task until the program is closed.
             await Task.Delay(-1);
-
-
         }
 
         private async Task Client_MessageReceived(SocketMessage messageParam)
@@ -56,9 +54,12 @@ namespace Discord_Simple_Embed_Bot
     {
         public static Task Log(LogMessage msg)
         {
-            Console.ForegroundColor = GetColor(msg.Severity);
-            Console.WriteLine(msg.ToString());
-            Console.ResetColor();
+            lock (Console.Out)
+            {
+                Console.ForegroundColor = GetColor(msg.Severity);
+                Console.WriteLine(msg.ToString());
+                Console.ResetColor();
+            }
             return Task.CompletedTask;
         }
 
