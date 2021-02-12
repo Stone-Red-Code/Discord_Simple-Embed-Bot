@@ -8,11 +8,11 @@ Coming soon
 ##Commands
 * help
   * Lists all commands
-  * Parameters: <command>
+  * Parameters: ```<command>```
 
 * prefix
   * Changes prefix
-  * Parameters: <prefix>
+  * Parameters: ´<prefix>´
     
 * new
   * Creats new embed
