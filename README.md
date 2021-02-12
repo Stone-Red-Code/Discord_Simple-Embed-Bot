@@ -6,7 +6,7 @@
 Coming soon
 
 ## Commands
-* help
+* ### help
   * Lists all commands
   * Parameters: `<command>`
 
