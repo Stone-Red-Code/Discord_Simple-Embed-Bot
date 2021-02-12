@@ -25,7 +25,7 @@ Coming soon
     ```
   * Example:
     ```
-    eb!Title
+    eb! Title
     #FFFFFF
     Description
     ++Field name
