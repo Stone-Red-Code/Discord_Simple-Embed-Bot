@@ -13,7 +13,7 @@ namespace Discord_Simple_Embed_Bot
 
         public async Task MainAsync()
         {
-            string tokenPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "token.txt");
+            string tokenPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "token.env");
             if (!File.Exists(tokenPath))
                 File.Create(tokenPath).Close();
 
@@ -65,14 +65,14 @@ namespace Discord_Simple_Embed_Bot
 
         private static ConsoleColor GetColor(LogSeverity logSeverity)
         {
-            switch (logSeverity)
+            return logSeverity switch
             {
-                case LogSeverity.Critical: return ConsoleColor.DarkRed;
-                case LogSeverity.Error: return ConsoleColor.Red;
-                case LogSeverity.Warning: return ConsoleColor.DarkYellow;
-                case LogSeverity.Info: return ConsoleColor.Green;
-                default: return ConsoleColor.White;
-            }
+                LogSeverity.Critical => ConsoleColor.DarkRed,
+                LogSeverity.Error => ConsoleColor.Red,
+                LogSeverity.Warning => ConsoleColor.DarkYellow,
+                LogSeverity.Info => ConsoleColor.Green,
+                _ => ConsoleColor.White,
+            };
         }
     }
 }
