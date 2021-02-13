@@ -6,7 +6,7 @@
 Currently, only guild members with administrator rights can use this bot.
 
 ### Permissions:
-This bot reqires the `Send Messages` and `Manage Messages` permissions
+This bot requires the `Send Messages` and `Manage Messages` permissions
 
 ### Invite:
 Coming soon
