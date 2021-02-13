@@ -24,7 +24,7 @@ namespace Discord_Simple_Embed_Bot
                 {
                     Fun = Commands.CreateEmbed,  
                     Desc = "Creats new embed",
-                    Usage = "<title>\n<hex color>\n<description>\n<field>",
+                    Usage = "<title>\n<hex color>\n<description>\n<fields>",
                     Example = "Title"
                 + "\n#EEEEEE"
                 + "\nDescription"
