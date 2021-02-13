@@ -3,6 +3,7 @@ using Discord.WebSocket;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -54,8 +55,15 @@ namespace Discord_Simple_Embed_Bot
                 return;
             }
 
-            await SqlManager.SetData((message.Channel as SocketGuildChannel).Guild.Id, prefix, 'p');
-            await message.Channel.SendMessageAsync($"Prefix changed to: `{prefix}`");
+            if (Architecture.Arm != RuntimeInformation.OSArchitecture)
+            {
+                await SqlManager.SetData((message.Channel as SocketGuildChannel).Guild.Id, prefix, 'p');
+                await message.Channel.SendMessageAsync($"Prefix changed to: `{prefix}`");
+            }
+            else
+            {
+                await message.Channel.SendMessageAsync($"Command does not support ARM architecture!");
+            }
         }
 
         static public async Task CreateEmbed(SocketUserMessage message)
