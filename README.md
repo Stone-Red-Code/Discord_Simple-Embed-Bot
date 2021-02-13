@@ -3,8 +3,10 @@
 > A bot that makes it very simple to post custom embeds
 
 ## Usage
-### Permissions:
 Currently, only guild members with administrator rights can use this bot.
+
+### Permissions:
+This bot reqires the `Send Messages` and `Manage Messages` permissions
 
 ### Invite:
 Coming soon
