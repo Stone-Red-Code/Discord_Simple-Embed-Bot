@@ -9,7 +9,7 @@ Currently, only guild members with administrator rights can use this bot.
 This bot requires the `Send Messages` and `Manage Messages` permissions
 
 ### Invite:
-[Invite now](https://discord.com/api/oauth2/authorize?client_id=801737294339112970&permissions=26624&scope=bot)
+[Invite now](https://discord.com/api/oauth2/authorize?client_id=808830741546008577&permissions=26624&scope=bot)
 
 ## Setup
 Coming soon
