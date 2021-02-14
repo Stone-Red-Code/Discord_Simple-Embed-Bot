@@ -189,7 +189,12 @@ C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simpl
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\publish\Discord.Net.Rest.dll
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\publish\Discord.Net.Webhook.dll
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\publish\Discord.Net.WebSocket.dll
+C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\publish\Microsoft.Data.Sqlite.dll
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\publish\Newtonsoft.Json.dll
-C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\publish\System.Data.SQLite.dll
+C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\publish\SQLitePCLRaw.batteries_v2.dll
+C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\publish\SQLitePCLRaw.nativelibrary.dll
+C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\publish\SQLitePCLRaw.core.dll
+C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\publish\SQLitePCLRaw.provider.dynamic_cdecl.dll
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\publish\System.Interactive.Async.dll
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\publish\System.Linq.Async.dll
+C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\publish\libe_sqlite3.so

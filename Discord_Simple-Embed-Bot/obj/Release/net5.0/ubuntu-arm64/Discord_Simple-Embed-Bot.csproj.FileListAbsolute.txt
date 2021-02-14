@@ -11,7 +11,6 @@ C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simpl
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\Discord.Net.Webhook.dll
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\Discord.Net.WebSocket.dll
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\Newtonsoft.Json.dll
-C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\System.Data.SQLite.dll
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\System.Interactive.Async.dll
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\System.Linq.Async.dll
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\Microsoft.CSharp.dll
@@ -205,3 +204,9 @@ C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simpl
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\obj\Release\net5.0\ubuntu-arm64\ref\Discord_Simple-Embed-Bot.dll
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\obj\Release\net5.0\ubuntu-arm64\Discord_Simple-Embed-Bot.pdb
 C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\obj\Release\net5.0\ubuntu-arm64\Discord_Simple-Embed-Bot.genruntimeconfig.cache
+C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\Microsoft.Data.Sqlite.dll
+C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\SQLitePCLRaw.batteries_v2.dll
+C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\SQLitePCLRaw.nativelibrary.dll
+C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\SQLitePCLRaw.core.dll
+C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\David\Google Drive\Programmieren\Discord_Simple-Embed-Bot\Discord_Simple-Embed-Bot\bin\Release\net5.0\ubuntu-arm64\libe_sqlite3.so

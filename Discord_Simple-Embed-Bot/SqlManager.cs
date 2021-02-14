@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Microsoft.Data.Sqlite;
+using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,24 +14,20 @@ namespace Discord_Simple_Embed_Bot
         static SqlManager()
         {
             databasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "MainDatabase.sqlite");
-            sqlConnectionString = "Data Source = " + databasePath + "; Version = 3";
+            sqlConnectionString = "Data Source = " + databasePath;
 
             //Create SQLite database file
             if (!File.Exists(databasePath))
             {
-                SQLiteConnection.CreateFile(databasePath);
+                File.Create(databasePath).Close();
             }
 
-            string sqlCommand1 = "CREATE TABLE IF NOT EXISTS Events (ServerId INTEGER,ChannelID INTEGER,EndDate TEXT)";
-            string sqlCommand2 = "CREATE TABLE IF NOT EXISTS Settings (ServerId INTEGER PRIMARY KEY,Data TEXT)";
+            string sqlCommand1 = "CREATE TABLE IF NOT EXISTS Settings (ServerId INTEGER PRIMARY KEY,Data TEXT)";
 
-            SQLiteConnection m_dbConnection = new SQLiteConnection(sqlConnectionString);
+            SqliteConnection m_dbConnection = new SqliteConnection(sqlConnectionString);
             m_dbConnection.Open();
 
-            SQLiteCommand command = new SQLiteCommand(m_dbConnection);
-            command.CommandText = sqlCommand1;
-            command.ExecuteNonQuery();
-            command.CommandText = sqlCommand2;
+            SqliteCommand command = new SqliteCommand(sqlCommand1,m_dbConnection);
             command.ExecuteNonQuery();
 
             m_dbConnection.Close();
@@ -41,11 +37,11 @@ namespace Discord_Simple_Embed_Bot
         {
             await Task.Run(() =>
             {
-                SQLiteConnection dbConnection = new SQLiteConnection(sqlConnectionString);
-                SQLiteCommand command = new SQLiteCommand("INSERT OR REPLACE INTO Settings (ServerId,Data) values (@serverId, @prefix)", dbConnection);
+                SqliteConnection dbConnection = new SqliteConnection(sqlConnectionString);
+                SqliteCommand command = new SqliteCommand("INSERT OR REPLACE INTO Settings (ServerId,Data) values (@serverId, @prefix)", dbConnection);
 
-                command.Parameters.Add(new SQLiteParameter("@serverId", serverId + type));
-                command.Parameters.Add(new SQLiteParameter("@prefix", data));
+                command.Parameters.Add(new SqliteParameter("@serverId", serverId + type));
+                command.Parameters.Add(new SqliteParameter("@prefix", data));
 
                 dbConnection.Open();
                 command.Connection = dbConnection;
@@ -59,15 +55,15 @@ namespace Discord_Simple_Embed_Bot
             return await Task<string>.Run(() =>
             {
                 string data = null;
-                using (SQLiteConnection dbConnection = new SQLiteConnection(sqlConnectionString))
+                using (SqliteConnection dbConnection = new SqliteConnection(sqlConnectionString))
                 {
                     
-                    SQLiteCommand command = new SQLiteCommand($"SELECT * FROM Settings WHERE ServerId=@type", dbConnection);
+                    SqliteCommand command = new SqliteCommand($"SELECT * FROM Settings WHERE ServerId=@type", dbConnection);
 
-                    command.Parameters.Add(new SQLiteParameter("@type", serverId + type));
+                    command.Parameters.Add(new SqliteParameter("@type", serverId + type));
 
                     dbConnection.Open();
-                    SQLiteDataReader dr = command.ExecuteReader();
+                    SqliteDataReader dr = command.ExecuteReader();
                     if (dr.Read())
                     {
                         data = dr.GetString(1);

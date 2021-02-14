@@ -55,15 +55,8 @@ namespace Discord_Simple_Embed_Bot
                 return;
             }
 
-            if (Architecture.Arm != RuntimeInformation.OSArchitecture)
-            {
-                await SqlManager.SetData((message.Channel as SocketGuildChannel).Guild.Id, prefix, 'p');
-                await message.Channel.SendMessageAsync($"Prefix changed to: `{prefix}`");
-            }
-            else
-            {
-                await message.Channel.SendMessageAsync($"Command does not support ARM architecture!");
-            }
+            await SqlManager.SetData((message.Channel as SocketGuildChannel).Guild.Id, prefix, 'p');
+            await message.Channel.SendMessageAsync($"Prefix changed to: `{prefix}`");
         }
 
         static public async Task CreateEmbed(SocketUserMessage message)

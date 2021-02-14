@@ -83,11 +83,7 @@ namespace Discord_Simple_Embed_Bot
 
         public static string PrefixFromMessage(SocketUserMessage message)
         {
-            string prefix = "eb!";
-            if (Architecture.Arm == RuntimeInformation.OSArchitecture)
-                return prefix;
-
-            prefix = SqlManager.GetData((message.Channel as SocketGuildChannel).Guild.Id, 'p').Result;
+            string prefix = SqlManager.GetData((message.Channel as SocketGuildChannel).Guild.Id, 'p').Result;
             GC.Collect();
             GC.WaitForPendingFinalizers();
             return prefix;
