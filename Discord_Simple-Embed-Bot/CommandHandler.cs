@@ -45,7 +45,7 @@ namespace Discord_Simple_Embed_Bot
             if (message is null) return;
 
             int argPos = 0;
-            string prefix = PrefixFromMessage(message);
+            string prefix = await PrefixFromMessageAsync(message);
             if (message.MentionedUsers.Any(x => x.Discriminator == Client.CurrentUser.Discriminator))
             {
                 EmbedBuilder eb = new EmbedBuilder
@@ -77,13 +77,13 @@ namespace Discord_Simple_Embed_Bot
             }
             else
             {
-                await message.Channel.SendMessageAsync($"Command not found! Use `{PrefixFromMessage(message)} help` to list all commands.");
+                await message.Channel.SendMessageAsync($"Command not found! Use `{await PrefixFromMessageAsync(message)} help` to list all commands.");
             }
         }
 
-        public static string PrefixFromMessage(SocketUserMessage message)
+        public static async Task<string> PrefixFromMessageAsync(SocketUserMessage message)
         {
-            string prefix = SqlManager.GetData((message.Channel as SocketGuildChannel).Guild.Id, 'p').Result;
+            string prefix = await SqlManager.GetData((message.Channel as SocketGuildChannel).Guild.Id, 'p');
             GC.Collect();
             GC.WaitForPendingFinalizers();
             return prefix;

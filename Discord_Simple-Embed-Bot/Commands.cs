@@ -15,7 +15,7 @@ namespace Discord_Simple_Embed_Bot
         {
             EmbedBuilder eb = new EmbedBuilder();
             eb.Color = Color.Blue;
-            string[] args = CommandHandler.CheckCommandArgs(message.Content, 0, 1, CommandHandler.PrefixFromMessage(message));
+            string[] args = CommandHandler.CheckCommandArgs(message.Content, 0, 1, await CommandHandler.PrefixFromMessageAsync(message));
             if (args == null)
             {
                 eb.Title = "Commands:";
@@ -33,7 +33,7 @@ namespace Discord_Simple_Embed_Bot
                     eb.AddField("Parameters", CommandHandler.CommandList[args[0].ToLower()].Usage);
                     if (!string.IsNullOrWhiteSpace(CommandHandler.CommandList[args[0].ToLower()].Example))
                     {
-                        eb.AddField("Example", $"```{CommandHandler.PrefixFromMessage(message)} {args[0].ToLower()} {CommandHandler.CommandList[args[0].ToLower()].Example}```");
+                        eb.AddField("Example", $"```{await CommandHandler.PrefixFromMessageAsync(message)} {args[0].ToLower()} {CommandHandler.CommandList[args[0].ToLower()].Example}```");
                     }
                 }
                 else
@@ -61,7 +61,7 @@ namespace Discord_Simple_Embed_Bot
 
         static public async Task CreateEmbed(SocketUserMessage message)
         {
-            string prefix = CommandHandler.PrefixFromMessage(message);
+            string prefix = await CommandHandler.PrefixFromMessageAsync(message);
             string content = message.Content[prefix.Length..].Trim()[3..];
             string[] lines = content.Split("\n");
 
