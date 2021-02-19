@@ -53,6 +53,10 @@ namespace Discord_Simple_Embed_Bot
                     Color = Color.Blue,
                     Description = $"Use `{prefix} help` to list all commands."
                 };
+                eb.AddField("About", "GuardDog is a bot that makes it very simple to post custom embeds");
+                eb.AddField("Contributors", "Stone_Red#2890");
+                eb.AddField("GitHub", "https://github.com/Stone-Red-Code/Discord_Simple-Embed-Bot");
+                eb.AddField("Invite", "https://discord.com/api/oauth2/authorize?client_id=808830741546008577&permissions=26624&scope=bot");
                 await message.Channel.SendMessageAsync("", false, eb.Build());
                 return;
             }

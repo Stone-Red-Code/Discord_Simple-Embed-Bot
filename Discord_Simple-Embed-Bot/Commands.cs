@@ -105,7 +105,7 @@ namespace Discord_Simple_Embed_Bot
                     efb.IsInline = true;
                     efb.Name = line.Remove(0, 2);
                 }
-                else if (efb is not null && !string.IsNullOrWhiteSpace(line))
+                else if (efb is not null)
                 {
                     efb.Value += line + "\n";
                 }
